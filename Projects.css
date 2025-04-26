@@ -1,0 +1,92 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Page Title */
+h1 {
+    color: #333;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 4px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    line-height: 0.1pc;
+}
+
+.sr {
+    display: block;
+    font-size: 0.67em;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    line-height: 0.1pc;
+}
+
+/* Container for books */
+.books-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual book card */
+.book {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for book cards */
+.book:hover {
+    transform: scale(1.05);
+}
+
+/* Book images */
+.book img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Book title */
+.book-title {
+    font-weight: bold;
+    margin: 10px 0;
+    color: #444;
+}
+
+/* Book description */
+.book-desc {
+    font-size: 14px;
+    color: #666;
+}
+.header .sravanthi {
+    background-color: #1276e0;
+    color: rgb(213, 17, 17);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+}

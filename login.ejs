@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Library Management System - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-card">
+        <div class="logo">Library Management System</div>
+        <h2>Login</h2>
+        <form action="/auth/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot Password?</a> | <a href="/register">Register</a>
+        </div>
+    </div>
+    <script src="/js/signup.js"></script>
+</body>
+</html>

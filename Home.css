@@ -1,0 +1,63 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Book Container (Horizontal Centering) */
+/* Centering the book container */
+.book-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 20px; /* Adds spacing between books */
+    min-height: 100vh; /* Ensures full height of the viewport */
+}
+
+/* Styling each book card */
+.book {
+    width: 250px; /* Ensures uniform width */
+    height: 350px; /* Ensures uniform height */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensuring images are properly adjusted */
+.book img {
+    width: 100%; /* Ensures the image fills the container */
+    height: 80%; /* Ensures equal image height */
+    object-fit: cover; /* Maintains aspect ratio and crops if needed */
+    border-radius: 5px;
+}
+
+/* Styling text inside the book card */
+.book h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.book p {
+    font-size: 14px;
+    color: gray;
+}
+
+
+

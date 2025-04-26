@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Author Availability</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+                  no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Container with semi-transparent background for readability */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    /* Input Field */
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    /* Button */
+    button {
+      background-color: #5a67d8;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #434190;
+    }
+
+    /* Result Paragraph */
+    #availabilityResult {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #2d3748;
+    }
+
+    /* Back Link */
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: #5a67d8;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #434190;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Check Author Availability</h2>
+    <input type="text" id="authorSearch" placeholder="Enter author name..." />
+    <button onclick="checkAvailability()">Search</button>
+    <p id="availabilityResult"></p>
+    <a href="index.html">Back</a>
+  </div>
+  <script>
+    function checkAvailability() {
+      let authorName = document.getElementById("authorSearch").value.trim();
+      let resultElement = document.getElementById("availabilityResult");
+
+      // Sample list of engineering-related books (random list)
+      const engineeringBooks = [
+        "Introduction to Algorithms by Thomas H. Cormen",
+        "Fundamentals of Thermodynamics by Richard E. Sonntag",
+        "The Art of Electronics by Paul Horowitz",
+        "Electrical Engineering: Principles and Applications by Allan R. Hambley",
+        "Fluid Mechanics by Frank M. White",
+        "Control Systems Engineering by Norman S. Nise",
+        "Structural Analysis by R.C. Hibbeler",
+        "Modern Control Engineering by Ogata Katsuhiko",
+        "Digital Design by M. Morris Mano",
+        "Mechanical Engineering Design by J.E. Shigley"
+      ];
+
+      if (authorName === "") {
+        resultElement.innerText = "Please enter an author name.";
+        return;
+      }
+
+      // Simulate a delay for checking availability
+      resultElement.innerText = "Checking availability for " + authorName + "...";
+
+      // Simulating a delay (like querying a database)
+      setTimeout(function() {
+        // In this case, we don't care about the author name, we show random engineering books
+        let randomBookList = engineeringBooks.sort(() => 0.5 - Math.random()).slice(0, 5);  // Pick 5 random books
+
+        resultElement.innerHTML = `Here are some engineering-related books that might interest you:`;
+
+        // Display the list of random books
+        let bookList = "<ul>";
+        randomBookList.forEach(function(book) {
+          bookList += `<li>${book}</li>`;
+        });
+        bookList += "</ul>";
+
+        resultElement.innerHTML += bookList;
+      }, 2000); // Simulate 2 seconds delay
+    }
+  </script>
+</body>
+</html>

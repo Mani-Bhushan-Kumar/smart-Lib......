@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Due Date Reminders</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+                  no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Container with semi-transparent background */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    /* Input Field */
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    /* Button */
+    button {
+      background-color: #5a67d8;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #434190;
+    }
+
+    /* Result Paragraph */
+    #reminderResult {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #2d3748;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      margin-top: 1.5rem;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+
+    tr.due-soon {
+      background-color: #fcbf49;
+    }
+
+    /* Back Link */
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: #5a67d8;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #434190;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Get Due Date Reminders</h2>
+    <input type="text" id="reminderBook" placeholder="Enter book title..." />
+    <button onclick="getReminder()">Get Reminder</button>
+    <p id="reminderResult"></p>
+
+    <!-- Table for displaying books and their due dates -->
+    <table id="bookTable">
+      <thead>
+        <tr>
+          <th>Book Title</th>
+          <th>Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be added here -->
+      </tbody>
+    </table>
+
+    <a href="index.html">Back</a>
+  </div>
+
+  <script>
+    // Sample books with due dates
+    const books = [
+      { title: 'Book 1', dueDate: '2025-03-21' },
+      { title: 'Book 2', dueDate: '2025-03-20' },
+      { title: 'Book 3', dueDate: '2025-03-25' },
+      { title: 'Book 4', dueDate: '2025-03-19' },
+    ];
+
+    function getReminder() {
+      let bookTitle = document.getElementById("reminderBook").value.trim();
+      if (bookTitle === "") {
+        document.getElementById("reminderResult").innerText = "Please enter a book title.";
+        return;
+      }
+      document.getElementById("reminderResult").innerText = "Reminder set for due date of " + bookTitle;
+
+      // Add new book to the table
+      const dueDate = prompt("Enter due date for " + bookTitle + " (YYYY-MM-DD):");
+      if (dueDate) {
+        books.push({ title: bookTitle, dueDate: dueDate });
+      }
+      updateBookTable();
+    }
+
+    function updateBookTable() {
+      const tableBody = document.querySelector("#bookTable tbody");
+      tableBody.innerHTML = '';  // Clear previous rows
+
+      // Sort books by due date (ascending order)
+      books.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+      // Create rows for each book
+      books.forEach((book, index) => {
+        const row = document.createElement("tr");
+
+        // Add red color to the row with the nearest due date
+        if (index === 0) {
+          row.classList.add("due-soon");
+        }
+
+        // Properly create row HTML
+        row.innerHTML = `<td>${book.title}</td><td>${book.dueDate}</td>`;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Initial table population
+    updateBookTable();
+  </script>
+</body>
+</html>

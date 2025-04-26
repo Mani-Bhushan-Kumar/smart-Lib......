@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Book or Author</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') 
+                  no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Container with semi-transparent background for readability */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    /* Button */
+    button {
+      background-color: #5a67d8;
+      color: #fff;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #434190;
+    }
+
+    /* Back Link */
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: #5a67d8;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #434190;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>How would you like to search?</h2>
+    <p>Please choose whether you want to search by book title or author name.</p>
+
+    <!-- Search Options -->
+    <button onclick="window.location.href='avaibility.html'">Search by Book Title</button>
+    <button onclick="window.location.href='searchAuthor.html'">Search by Author Name</button>
+<br>
+    <a href="index.html">Back</a>
+  </div>
+</body>
+</html>

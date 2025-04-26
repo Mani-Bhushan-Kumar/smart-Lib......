@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Most Used Books</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Background Styling */
+    body {
+      background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
+                  no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Overlay for better contrast */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    /* Most Used Books Card */
+    .preferred-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .preferred-card h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .preferred-card .book-list {
+      text-align: left;
+      font-size: 1.1rem;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .preferred-card .book-list h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .preferred-card .book-list ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .preferred-card a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #5a67d8;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .preferred-card a:hover {
+      color: #434190;
+    }
+
+    @media (max-width: 480px) {
+      .preferred-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="preferred-card">
+    <h2>Most Used Books in the Library</h2>
+    <div class="book-list">
+      <h3>General Literature</h3>
+      <ul>
+        <li>To Kill a Mockingbird - Harper Lee</li>
+        <li>1984 - George Orwell</li>
+        <li>Pride and Prejudice - Jane Austen</li>
+      </ul>
+      <h3>Technical & Programming</h3>
+      <ul>
+        <li>Effective Java - Joshua Bloch</li>
+        <li>Python Crash Course - Eric Matthes</li>
+        <li>Clean Code - Robert C. Martin</li>
+      </ul>
+      <h3>Engineering & Science</h3>
+      <ul>
+        <li>Structures: Or Why Things Don't Fall Down - J.E. Gordon</li>
+        <li>Shigley's Mechanical Engineering Design - Richard G. Budynas</li>
+        <li>Engineering Fundamentals - Saeed Moaveni</li>
+      </ul>
+    </div>
+    <a href="index.html">Back</a>
+  </div>
+</body>
+</html>
